@@ -1,3 +1,4 @@
+from json import JSONEncoder
 import validators
 import uvicorn
 import os
@@ -26,6 +27,11 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+@app.get("/")
+async def homepage(request: Request):
+    return {"status": 200, "message": "Connected"}
 
 
 @app.get("/api/db-api")
