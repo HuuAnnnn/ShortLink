@@ -14,4 +14,4 @@ COPY ./src/app /src/app
 WORKDIR /src/app
 
 # 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["python", "app.py"]

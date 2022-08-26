@@ -1,9 +1,13 @@
 import validators
+import uvicorn
+import os
+
 from fastapi import Depends, FastAPI, Request
 from sqlalchemy.orm import Session
-from db import crud, models, schemas
 from fastapi.responses import RedirectResponse, HTMLResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
+
+from db import crud, models, schemas
 from db.database import SessionLocal, engine
 from features.shortlink.ShortenLink import shorter_url
 from processfunc import *
@@ -146,3 +150,7 @@ async def redirect_user(short_url: str, db: Session = Depends(get_db)):
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     return render_error_page(request, exc.status_code, exc.detail)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=os.getenv("PORT", 80))
