@@ -10,7 +10,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from db import crud, models, schemas
 from db.database import SessionLocal, engine
-from features.shortlink.ShortenLink import shorter_url
+from features.shortlink.ShortenLink import ShortLink
 from processfunc import *
 from frontend import *
 
@@ -120,7 +120,7 @@ def save_to_database(
         if url.is_custom_url:
             short_url = process_custom_url(url.short_url)
         else:
-            short_url = shorter_url(url.long_url)
+            short_url = ShortLink.shorter_url(url.long_url)
 
         is_exist = crud.is_duplicate_short_link(db, short_url)
         db_short_link = None
@@ -159,4 +159,4 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=os.getenv("PORT", 80))
+    uvicorn.run(app, host="0.0.0.0", port=os.getenv("PORT", 8080))
