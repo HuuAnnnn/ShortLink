@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 *.db
+certificates
 
 # OSX useful to ignore
 *.DS_Store
