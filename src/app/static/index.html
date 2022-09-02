@@ -2,16 +2,192 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
-    <title>Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+  <link rel="stylesheet" href="{{ url_for('static', path='/main.css') }}">
 </head>
 
 <body>
-    <h1>This is homepage</h1>
-    <a href="./page1.html">123</a>
+  <div id="navbar">
+
+    <div><img id="logo" src="{{ url_for('static', path='/images/logo.svg') }}" alt="logo"></div>
+    <div id="functions">
+
+      <ul>
+        <li class="function">Features</li>
+        <li class="function">Pricing</li>
+        <li class="function">Resources</li>
+      </ul>
+
+      <ul id="buttons">
+        <li class="button button1">Login</li>
+        <li class="button button2">Sign Up</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="title_space">
+    <span id="titles">
+      <h1 id="title">
+        More than just shorter links
+      </h1>
+      <h4 id="sub">
+        Build your brand's recognition and get detailed insights
+        on how your links are performing.
+      </h4>
+      <div id="start-button">
+        Get Started
+      </div>
+    </span>
+
+    <span id="illustration-working">
+      <img src="{{ url_for('static', path='/images/illustration-working.svg') }}" alt="illustration-working">
+    </span>
+  </div>
+
+  <div id="link_space">
+
+    <div id="link_inspace">
+      <span id="link link_empty_ver"><input type="text" placeholder="Shorten a link here..."></span>
+      <span id="link_button">Shorten It!</span>
+      <sub id="empty_link_warning">Please add a link.</sub>
+      <img id="link_background" src="{{ url_for('static', path='/images/bg-shorten-desktop.svg') }}" alt="bg-shorten-desktop">
+    </div>
+
+    <div class="shorten">
+      <div class="shorten_link">https://</div>
+      <div class="shorten_link shorten_link_right">https://</div>
+      <div class="copy_button">Copy</div>
+    </div>
+
+    <div class="shorten">
+      <div class="shorten_link">https://</div>
+      <div class="shorten_link shorten_link_right">https://</div>
+      <div class="copy_button copied_btn">Copied!</div>
+    </div>
+    <div class="shorten">
+      <div class="shorten_link">https://</div>
+      <div class="shorten_link shorten_link_right">https://</div>
+      <div class="copy_button">Copy</div>
+    </div>
+  </div>
+
+  <div id="advanced_statistics_space">
+    <div id="advanced_statistics_heading">
+      <h1 id="advanced_statistics_title">Advanced Statistics</h1>
+      <h4 id="advanced_statistics_sub">Track how your links are performing across the web with our
+        advanced statistics dashboard.
+      </h4>
+    </div>
+
+      <div id="list">
+      <span class="unique">
+        <div class="icon">
+          <img src="{{ url_for('static', path='/images/icon-brand-recognition.svg') }}" alt="icon-brand-recognition">
+        </div>
+        <h2>Brand Recognition</h2>
+        <h4 class="list_sub">Boost your brand recognition with each click. Generic links don't
+          mean a thing. Branded links help instil confidence in your content.</h4>
+      </span>
+  
+      <svg id="connect_line" width="25" height="5"></svg>
+  
+      <span class="unique unique2">
+        <div class="icon">
+          <img src="{{ url_for('static', path='/images/icon-detailed-records.svg') }}" alt="icon-detailed-records">
+        </div>
+        <h2>Detailed Records</h2>
+        <h4 class="list_sub">Gain insights into who is clicking your links. Knowing when and where
+          people engage with your content helps inform better decisions.</h4>
+      </span>
+  
+      <svg id="connect_line" width="25" height="5"></svg>
+  
+      <span class="unique unique3">
+        <div class="icon icon3">
+          <img src="{{ url_for('static', path='/images/icon-fully-customizable.svg') }}" alt="icon-fully-customizable">
+        </div>
+        <h2>Fully Customizable</h2>
+        <h4 class="list_sub">
+          Improve brand awareness and content discoverability through customizable
+          links, supercharging audience engagement.
+        </h4>
+      </span>
+    
+    </div>
+  </div>
+
+  <div id="boost_space">
+    <div id="boost_content">
+      <h1 id="boost_title">Boost your links today</h1>
+      <div id="start-button">Get Started</div>
+    </div>
+    <img id="boost_background" src="{{ url_for('static', path='/images/bg-boost-desktop.svg') }}" alt="bg-boost-desktop">
+
+  </div>
+
+  <div id="end">
+    <div id="end_logo_space">
+      <img id="end_logo" src="{{ url_for('static', path='/images/logo.svg') }}" alt="logo">
+    </div>
+
+    <div id="end_content">
+
+      <span>
+        <h2>Features</h2>
+        <h4 id="end_sub">Link Shortening</h4>
+        <h4 id="end_sub">Branded Links</h4>
+        <h4 id="end_sub">Analytics</h4>
+      </span>
+  
+      <span>
+        <h2>Resources</h2>
+        <h4 id="end_sub">Blog</h4>
+        <h4 id="end_sub">Developers</h4>
+        <h4 id="end_sub">Support</h4>
+      </span>
+  
+      <span>
+        <h2>Company</h2>
+        <h4 id="end_sub">About</h4>
+        <h4 id="end_sub">Our Team</h4>
+        <h4 id="end_sub">Careers</h4>
+        <h4 id="end_sub">Contact</h4>
+      </span>
+  
+      <span id="end_icon_space">
+        <img id="end_icon" src="{{ url_for('static', path='/images/icon-facebook.svg') }}" alt="icon-facebook">
+        <img id="end_icon" src="{{ url_for('static', path='/images/icon-twitter.svg') }}" alt="icon-twitter">
+        <img id="end_icon" src="{{ url_for('static', path='/images/icon-pinterest.svg') }}" alt="icon-pinterest">
+        <img id="end_icon" src="{{ url_for('static', path='/images/icon-instagram.svg') }}" alt="icon-instagram">
+      </span>
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">PiiNek</a>.
+  </div>
 </body>
 
 </html>

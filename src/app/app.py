@@ -29,9 +29,9 @@ def get_db():
         db.close()
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def homepage(request: Request):
-    return {"status": 200, "message": "Connected"}
+    return static.TemplateResponse("/index.html", {"request": request})
 
 
 @app.get("/api/db-api")

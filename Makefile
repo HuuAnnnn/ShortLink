@@ -1,2 +1,2 @@
 StartServer:
-	cd src & cd app & python app.py
+	cd src & cd app & uvicorn app:app --reload
